@@ -4,17 +4,25 @@
 """
 
 
-a = int(input('Введите последовательность натуральных чисел: '))
-b = int(input('Введите искомое натуральное число: '))
-qty = 0
-div = 10
+def calc(dig, num):
+    q = 0
+    div = 10
+    while True:
+        if int((num%div)//(div/10)) == dig:
+            q += 1
+        if num == num%div:
+            break
+        div = div * 10
+    return q
 
-while True:
-    dig = int((a%div)//(div/10))
-    if dig == b:
-        qty += 1
-    if a == a%div:
-        break
-    div = div * 10
 
-print(f'В последовательности {a} число {b} встречается {qty} {"раз" if 5 < qty > 1 else "раза"}')
+n = int(input('Из скольки цифр будет последовательность: '))
+a = int(input('Введите искомое натуральное число: '))
+qty = 0;
+sequence = ''
+for i in range(1, n+1):
+    b = int(input(f'Введите натуральное число N {i}: '))
+    sequence = f'{b}' if sequence == '' else f'{sequence}, {b}'
+    qty += calc(a, b)
+
+print(f'В введенной последовательности ({sequence}) число {a} встречается {qty} {"раз" if 5 < qty > 1 else "раза"}')
