@@ -19,9 +19,7 @@ while True:
             print('Не верный знак действия')
 
     if action != '0':
-        if action not in ['+', '-', '*', '/']:
-            print('Не верный знак действия')
-        elif action == '/' and b == 0:
+        if action == '/' and b == 0:
             print('Делить на ноль нельзя')
         else:
             result = eval(f'{a}{action}{b}')
