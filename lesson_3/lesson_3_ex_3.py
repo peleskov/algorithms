@@ -7,7 +7,7 @@ RANGE_MIN = -100
 RANGE_MAX = 100
 RANGE_LEN = 10
 
-range_ = [random.randint(RANGE_MIN, RANGE_MAX) for _ in range(0, RANGE_LEN + 1)]
+range_ = [random.randint(RANGE_MIN, RANGE_MAX) for _ in range(0, RANGE_LEN)]
 print(range_)
 
 max_ = [0, range_[0]]  # index, value
