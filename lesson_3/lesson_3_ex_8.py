@@ -16,6 +16,7 @@ for _ in range(0, rows):
     row.append(sum_row)
     matrix.append(row)
 
+print('Матрица:')
 for row in matrix:
     for i in row:
         print(f'{i:>4}', end='')
