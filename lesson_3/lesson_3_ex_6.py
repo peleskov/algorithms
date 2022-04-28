@@ -24,6 +24,6 @@ if abs(max_[0] - min_[0]) > 1:
     pos = (max_[0], min_[0]) if min_[0] > max_[0] else (min_[0], max_[0])
     for i in range(pos[0] + 1, pos[1]):
         sum_ += range_[i]
-    print(pos)
+    print(f'Позиции минимального и максимального элемента: {pos}')
 
-print(sum_)
+print(f'Сумма элементов, находящихся между минимальным и максимальным элементами: {sum_}')
