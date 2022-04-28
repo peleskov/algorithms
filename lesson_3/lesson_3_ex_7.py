@@ -11,22 +11,12 @@ RANGE_LEN = 10
 range_ = [random.randint(RANGE_MIN, RANGE_MAX) for _ in range(0, RANGE_LEN)]
 print(range_)
 
+res = [None, None]
+for i in range_:
+    if res[0] is None or i < res[0]:
+        res[1], res[0] = res[0], i
+    elif res[1] is None or i == res[0] or i < res[1]:
+        res[1] = i
 
-def quick_sort(array):
-    if len(array) > 1:
-        pivot = array.pop()
-        left_lst, center_lst, right_lst = [], [pivot], []
-        for i in array:
-            if i == pivot:
-                center_lst.append(i)
-            elif i > pivot:
-                right_lst.append(i)
-            else:
-                left_lst.append(i)
-        return quick_sort(left_lst) + center_lst + quick_sort(right_lst)
-    else:
-        return array
+print(f'Два наименьших элемента: {res}')
 
-
-range_sorted = quick_sort(range_)
-print(f'Два наименьших элемента: {range_sorted[0:2]}')
