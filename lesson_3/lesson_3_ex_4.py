@@ -20,9 +20,12 @@ for i in range_:
 
 max_count = 0
 max_value = 0
-for i, v in result.items():
-    if v >= max_value:
+for v, i in result.items():
+    if i >= max_count:
         max_count = i
         max_value = v
 
-print(f'Чаще всего ({max_count} {"раза" if 2 <= max_count <= 4 else "раз"}) в массиве встречается: {max_value}')
+if max_count == 1:
+    print('Все числа встречаются 1 раз')
+else:
+    print(f'Чаще всего ({max_count} {"раза" if 2 <= max_count <= 4 else "раз"}) в массиве встречается: {max_value}')
