@@ -24,30 +24,6 @@ def prime(n):
     return i
 
 
-def sieve(index):
-    n_end = index
-    n_start = 2
-    a = [0, 0]
-    while True:
-        for k in range(n_start, n_end + 1):
-            a.append(k)
-        i = 2
-        while i <= n_end:
-            if a[i] != 0:
-                j = i + i
-                while j <= n_end:
-                    a[j] = 0
-                    j = j + i
-            i += 1
-        b = [x for x in a if x != 0]
-        if len(b) >= index:
-            break
-        else:
-            n_start = n_end + 1
-            n_end = n_end * 2
-    return b[index - 1]
-
-
 num_tests = 10  # количество тестов
 result = []
 for var in [i * 1_000 for i in range(1, num_tests + 1)]:  # изменяем индекс искомого числа
